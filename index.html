@@ -6,17 +6,20 @@
     <title>Pablo Gil Martínez | Data Scientist</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Personalización de la barra de desplazamiento para un look más tech */
+        /* Personalización de la barra de desplazamiento */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #030712; }
         ::-webkit-scrollbar-thumb { background: #1f2937; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #374151; }
+        
+        /* Previene el scroll del fondo cuando el modal está abierto */
+        body.modal-open { overflow: hidden; }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-300 font-sans antialiased selection:bg-cyan-500 selection:text-black">
 
     <!-- Navegación Superior -->
-    <nav class="bg-gray-950/90 backdrop-blur-md border-b border-gray-800 fixed w-full z-50 top-0 left-0">
+    <nav class="bg-gray-950/90 backdrop-blur-md border-b border-gray-800 fixed w-full z-40 top-0 left-0">
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
             <span class="font-mono font-bold text-xl tracking-tighter text-cyan-400">PG_</span>
             <div class="hidden md:flex space-x-8 text-sm font-medium text-gray-400">
@@ -29,11 +32,11 @@
         </div>
     </nav>
 
-    <!-- Contenedor Principal (Layout de 2 columnas) -->
+    <!-- Contenedor Principal -->
     <div class="flex pt-[68px] min-h-screen">
 
         <!-- Sidebar / Banner Izquierdo -->
-        <aside class="w-72 fixed h-[calc(100vh-68px)] bg-gray-950 border-r border-gray-800 overflow-y-auto p-8 hidden md:block">
+        <aside class="w-72 fixed h-[calc(100vh-68px)] bg-gray-950 border-r border-gray-800 overflow-y-auto p-8 hidden md:block z-30">
             
             <div class="mb-8">
                 <h3 class="text-cyan-400 font-mono text-sm uppercase tracking-widest mb-4 border-b border-gray-800 pb-2">Conocimiento</h3>
@@ -76,11 +79,10 @@
             </div>
         </aside>
 
-        <!-- Contenido Central (A la derecha del sidebar) -->
+        <!-- Contenido Central -->
         <main class="flex-1 md:ml-72 bg-gray-900">
             
-            <!-- Hero Section (Foto en negro + Nombre) -->
-            <!-- Puedes cambiar la URL de la imagen en 'bg-[url(...)]' por una tuya o dejar esta abstracta de datos -->
+            <!-- Hero Section -->
             <header id="inicio" class="relative bg-black h-[60vh] flex flex-col justify-center items-center text-center border-b border-gray-800 bg-[url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center">
                 <div class="absolute inset-0 bg-black/80 backdrop-blur-sm"></div>
                 <div class="relative z-10 px-4">
@@ -89,7 +91,7 @@
                 </div>
             </header>
 
-            <div class="max-w-4xl mx-auto px-6 py-16 space-y-24">
+            <div class="max-w-5xl mx-auto px-6 py-16 space-y-24">
                 
                 <!-- Sobre Mí -->
                 <section id="sobre-mi" class="scroll-mt-24">
@@ -107,36 +109,83 @@
                 <!-- Proyectos -->
                 <section id="proyectos" class="scroll-mt-24">
                     <h2 class="text-3xl font-bold text-white mb-8 border-l-4 border-cyan-400 pl-4">Proyectos Destacados</h2>
+                    
+                    <!-- Grid de Proyectos -->
                     <div class="grid md:grid-cols-2 gap-6">
                         
-                        <!-- Proyecto 1 -->
-                        <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-cyan-500/50 transition duration-300 group">
+                        <!-- Proyecto: Valenbisi Smart -->
+                        <div onclick="openModal('Valenbisi Smart', 'Predictivo / Real-time', 'Junio 2026', '<p>Aplicación web predictiva diseñada para anticipar la disponibilidad de bicicletas urbanas en las estaciones de Valencia. El proyecto combina modelos de machine learning con la API de rutas de OSRM.</p><p>Se enfoca en mejorar la experiencia del usuario final, permitiendo planificar rutas con garantías de encontrar anclajes libres, a través de una interfaz interactiva desplegada en Streamlit.</p>', ['Python', 'Streamlit', 'Machine Learning', 'OSRM API'])" 
+                             class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-cyan-500 transition duration-300 group cursor-pointer shadow-lg hover:shadow-cyan-500/20 relative">
                             <div class="p-6">
                                 <span class="text-xs font-mono uppercase text-cyan-400 mb-2 block">Predictivo / Real-time</span>
                                 <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition">Valenbisi Smart</h3>
-                                <p class="text-gray-400 text-sm mb-6">
-                                    Aplicación web interactiva que predice la disponibilidad de bicicletas urbanas en Valencia utilizando machine learning, datos históricos y la API de OSRM.
+                                <p class="text-gray-400 text-sm mb-6 line-clamp-3">
+                                    Aplicación web interactiva que predice la disponibilidad de bicicletas urbanas en Valencia utilizando machine learning y la API de OSRM.
                                 </p>
                                 <div class="flex flex-wrap gap-2">
                                     <span class="text-xs bg-gray-900 border border-gray-700 px-2 py-1 rounded text-gray-300">Python</span>
                                     <span class="text-xs bg-gray-900 border border-gray-700 px-2 py-1 rounded text-gray-300">Streamlit</span>
-                                    <span class="text-xs bg-gray-900 border border-gray-700 px-2 py-1 rounded text-gray-300">Machine Learning</span>
                                 </div>
+                            </div>
+                            <div class="absolute bottom-4 right-6 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 text-sm font-semibold flex items-center gap-1">
+                                Ver más <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                             </div>
                         </div>
 
-                        <!-- Proyecto 2 -->
-                        <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-cyan-500/50 transition duration-300 group">
+                        <!-- Proyecto: Math Vision -->
+                        <div onclick="openModal('Math Vision', 'Computer Vision / LLMs', 'Febrero 2026 - Presente', '<p>Proyecto de investigación centrado en evaluar las capacidades de razonamiento lógico de los Large Language Models (LLMs) actuales.</p><p>A través de la resolución de problemas matemáticos visuales complejos, el sistema pone a prueba el comportamiento del modelo, creando pipelines técnicos para automatizar la extracción de fallos y alucinaciones lógicas en arquitecturas multimodales.</p>', ['PyTorch', 'Transformers', 'LLMs', 'Evaluación'])" 
+                             class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-cyan-500 transition duration-300 group cursor-pointer shadow-lg hover:shadow-cyan-500/20 relative">
                             <div class="p-6">
                                 <span class="text-xs font-mono uppercase text-cyan-400 mb-2 block">Computer Vision / LLMs</span>
                                 <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition">Math Vision</h3>
-                                <p class="text-gray-400 text-sm mb-6">
-                                    Proyecto de investigación evaluando el razonamiento lógico de los Large Language Models (LLMs) al enfrentarse a problemas matemáticos visuales complejos.
+                                <p class="text-gray-400 text-sm mb-6 line-clamp-3">
+                                    Proyecto de investigación evaluando el razonamiento lógico de los LLMs al enfrentarse a problemas matemáticos visuales complejos.
                                 </p>
                                 <div class="flex flex-wrap gap-2">
                                     <span class="text-xs bg-gray-900 border border-gray-700 px-2 py-1 rounded text-gray-300">PyTorch</span>
                                     <span class="text-xs bg-gray-900 border border-gray-700 px-2 py-1 rounded text-gray-300">Transformers</span>
                                 </div>
+                            </div>
+                            <div class="absolute bottom-4 right-6 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 text-sm font-semibold flex items-center gap-1">
+                                Ver más <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            </div>
+                        </div>
+
+                        <!-- Proyecto: Beyond Neptune -->
+                        <div onclick="openModal('Beyond Neptune', 'Astroinformática / Análisis Espacial', 'Enero 2025 - Agosto 2025', '<p>Sistema de astroinformática especializado en la identificación y análisis de datos exoplanetarios.</p><p>Este proyecto se centra en el procesamiento de inmensos volúmenes de datos espaciales, aplicando algoritmos estadísticos y de limpieza de datos para detectar anomalías y patrones compatibles con la existencia de exoplanetas.</p>', ['Python', 'Análisis Espacial', 'Estadística', 'Astroinformática'])" 
+                             class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-cyan-500 transition duration-300 group cursor-pointer shadow-lg hover:shadow-cyan-500/20 relative">
+                            <div class="p-6">
+                                <span class="text-xs font-mono uppercase text-cyan-400 mb-2 block">Análisis Espacial</span>
+                                <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition">Beyond Neptune</h3>
+                                <p class="text-gray-400 text-sm mb-6 line-clamp-3">
+                                    Proyecto de astroinformática enfocado en la identificación de exoplanetas mediante técnicas avanzadas de análisis de datos espaciales.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-xs bg-gray-900 border border-gray-700 px-2 py-1 rounded text-gray-300">Python</span>
+                                    <span class="text-xs bg-gray-900 border border-gray-700 px-2 py-1 rounded text-gray-300">Data Analysis</span>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-4 right-6 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 text-sm font-semibold flex items-center gap-1">
+                                Ver más <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            </div>
+                        </div>
+
+                        <!-- Proyecto: Happy Doggy -->
+                        <div onclick="openModal('Happy Doggy', 'Affective Computing', 'Junio 2025 - Agosto 2025', '<p>Sistema multimodal de computación afectiva orientado al mundo animal, específicamente para el reconocimiento de emociones caninas.</p><p>Integra diversos flujos de datos (visuales y de comportamiento) para entrenar modelos que asisten a veterinarios y entrenadores en la evaluación del bienestar emocional de los perros.</p>', ['Affective Computing', 'Computer Vision', 'Deep Learning'])" 
+                             class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 hover:border-cyan-500 transition duration-300 group cursor-pointer shadow-lg hover:shadow-cyan-500/20 relative">
+                            <div class="p-6">
+                                <span class="text-xs font-mono uppercase text-cyan-400 mb-2 block">Affective Computing</span>
+                                <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition">Happy Doggy</h3>
+                                <p class="text-gray-400 text-sm mb-6 line-clamp-3">
+                                    Sistema multimodal para el reconocimiento y clasificación de emociones caninas aplicando técnicas de computación afectiva.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-xs bg-gray-900 border border-gray-700 px-2 py-1 rounded text-gray-300">Deep Learning</span>
+                                    <span class="text-xs bg-gray-900 border border-gray-700 px-2 py-1 rounded text-gray-300">Computer Vision</span>
+                                </div>
+                            </div>
+                            <div class="absolute bottom-4 right-6 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-400 text-sm font-semibold flex items-center gap-1">
+                                Ver más <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                             </div>
                         </div>
 
@@ -150,24 +199,30 @@
                         
                         <div class="flex flex-col md:flex-row gap-4 bg-gray-800/50 p-6 rounded-xl border border-gray-700/50">
                             <div class="md:w-1/3">
-                                <p class="text-cyan-400 font-mono text-sm">Presente</p>
+                                <p class="text-cyan-400 font-mono text-sm">Febrero 2026 - Presente</p>
                                 <h3 class="text-lg font-bold text-white mt-1">Junta Directiva</h3>
                                 <p class="text-gray-400 text-sm">Sigma Data Club UPV</p>
                             </div>
                             <div class="md:w-2/3 text-gray-300 text-sm">
-                                Participación activa en la dirección del club, dinamizando el ecosistema de innovación de la universidad y fomentando el desarrollo técnico en el área de ciencia de datos.
+                                Participación activa en la dirección del club, dinamizando el ecosistema de innovación de la universidad y fomentando el desarrollo técnico en el área de ciencia de datos mediante talleres y retos grupales.
                             </div>
                         </div>
 
                         <div class="flex flex-col md:flex-row gap-4 bg-gray-800/50 p-6 rounded-xl border border-gray-700/50">
                             <div class="md:w-1/3">
-                                <p class="text-cyan-400 font-mono text-sm">Competiciones</p>
+                                <p class="text-cyan-400 font-mono text-sm">Competiciones (2026)</p>
                                 <h3 class="text-lg font-bold text-white mt-1">Hackathons</h3>
                                 <p class="text-gray-400 text-sm">Data Optimization</p>
                             </div>
-                            <div class="md:w-2/3 text-gray-300 text-sm space-y-2">
-                                <p>🏆 <strong class="text-white">1er lugar</strong> en el View Innovation Campus Hackathon.</p>
-                                <p>🥈 <strong class="text-white">2do lugar</strong> en el Mercadona Hackathon enfocado en optimización de datos.</p>
+                            <div class="md:w-2/3 text-gray-300 text-sm space-y-3">
+                                <div class="flex items-center gap-3">
+                                    <span class="text-xl">🏆</span>
+                                    <p><strong class="text-white">1er lugar</strong> – View Innovation Campus Hackathon.</p>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="text-xl">🥈</span>
+                                    <p><strong class="text-white">2do lugar</strong> – Mercadona Hackathon enfocado en optimización y flujos de datos logísticos.</p>
+                                </div>
                             </div>
                         </div>
 
@@ -176,18 +231,23 @@
 
                 <!-- Contacto -->
                 <section id="contacto" class="scroll-mt-24 pb-12">
-                    <div class="bg-gradient-to-br from-gray-800 to-gray-900 p-10 rounded-2xl border border-gray-700 text-center">
-                        <h2 class="text-3xl font-bold text-white mb-4">¿Hablamos?</h2>
-                        <p class="text-gray-400 mb-8 max-w-lg mx-auto">
-                            Estoy abierto a colaborar en proyectos de investigación, prácticas de Data Science o desarrollo de software en el ecosistema de IA.
-                        </p>
-                        <div class="flex flex-col sm:flex-row justify-center gap-4">
-                            <a href="mailto:tu-correo@email.com" class="bg-cyan-500 hover:bg-cyan-400 text-gray-900 font-bold px-8 py-3 rounded-lg transition duration-200">
-                                Enviar Email
-                            </a>
-                            <a href="#" class="bg-gray-800 hover:bg-gray-700 text-white border border-gray-600 px-8 py-3 rounded-lg font-medium transition duration-200">
-                                LinkedIn
-                            </a>
+                    <div class="bg-gradient-to-br from-gray-800 to-gray-900 p-10 rounded-2xl border border-gray-700 text-center relative overflow-hidden">
+                        <!-- Efecto de brillo de fondo -->
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-cyan-500/5 blur-[100px] pointer-events-none"></div>
+                        
+                        <div class="relative z-10">
+                            <h2 class="text-3xl font-bold text-white mb-4">¿Hablamos?</h2>
+                            <p class="text-gray-400 mb-8 max-w-lg mx-auto">
+                                Buscando activamente un <strong class="text-white">Data Science Internship</strong> para septiembre de 2026. Estoy abierto a colaborar en proyectos de investigación o desarrollo de software en el ecosistema de IA.
+                            </p>
+                            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                                <a href="mailto:tu-correo@email.com" class="bg-cyan-500 hover:bg-cyan-400 text-gray-900 font-bold px-8 py-3 rounded-lg transition duration-200">
+                                    Enviar Email
+                                </a>
+                                <a href="#" class="bg-gray-800 hover:bg-gray-700 text-white border border-gray-600 px-8 py-3 rounded-lg font-medium transition duration-200">
+                                    LinkedIn
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -202,5 +262,99 @@
         </main>
     </div>
 
+    <!-- MODAL / PSEUDOPÁGINA -->
+    <div id="project-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 opacity-0 transition-opacity duration-300">
+        <!-- El contenedor de la ventana -->
+        <div id="modal-content" class="bg-gray-900 border border-gray-700 rounded-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto shadow-2xl transform scale-95 transition-transform duration-300 relative">
+            
+            <!-- Botón de Cerrar (X) -->
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white bg-gray-800 hover:bg-gray-700 rounded-full p-2 transition z-10">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            
+            <!-- Contenido dinámico inyectado por JS -->
+            <div class="p-8 md:p-12">
+                <span id="modal-type" class="text-sm font-mono uppercase text-cyan-400 mb-1 block"></span>
+                <span id="modal-date" class="text-xs text-gray-500 font-mono mb-4 block"></span>
+                
+                <h2 id="modal-title" class="text-3xl md:text-4xl font-bold text-white mb-6"></h2>
+                
+                <!-- Descripción -->
+                <div id="modal-description" class="text-gray-300 text-lg leading-relaxed mb-8 space-y-4"></div>
+                
+                <!-- Etiquetas/Tecnologías -->
+                <div class="mb-8">
+                    <h4 class="text-sm text-gray-500 uppercase tracking-widest mb-3">Stack Tecnológico</h4>
+                    <div id="modal-tags" class="flex flex-wrap gap-2"></div>
+                </div>
+                
+                <!-- Botón de GitHub o Live Demo (estático por ahora) -->
+                <div class="flex gap-4 border-t border-gray-800 pt-8">
+                    <a href="#" class="bg-cyan-500 hover:bg-cyan-400 text-gray-900 font-bold px-6 py-3 rounded-lg transition duration-200">
+                        Ver Repositorio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPT PARA CONTROLAR LA PSEUDOPÁGINA -->
+    <script>
+        function openModal(title, type, date, descriptionHTML, tagsArray) {
+            // Llenar datos
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-type').innerText = type;
+            document.getElementById('modal-date').innerText = date;
+            document.getElementById('modal-description').innerHTML = descriptionHTML;
+            
+            // Llenar etiquetas
+            const tagsContainer = document.getElementById('modal-tags');
+            tagsContainer.innerHTML = '';
+            tagsArray.forEach(tag => {
+                const span = document.createElement('span');
+                span.className = 'text-xs bg-gray-950 border border-gray-700 px-3 py-1.5 rounded-md text-gray-300 font-mono';
+                span.innerText = tag;
+                tagsContainer.appendChild(span);
+            });
+
+            // Seleccionar elementos del modal
+            const modal = document.getElementById('project-modal');
+            const modalContent = document.getElementById('modal-content');
+            
+            // Mostrar modal
+            modal.classList.remove('hidden');
+            document.body.classList.add('modal-open'); // Previene scroll
+            
+            // Pequeño retardo para que la animación de opacidad y escala funcione
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                modalContent.classList.remove('scale-95');
+            }, 10);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('project-modal');
+            const modalContent = document.getElementById('modal-content');
+            
+            // Iniciar animación de cierre
+            modal.classList.add('opacity-0');
+            modalContent.classList.add('scale-95');
+            
+            // Ocultar completamente tras la animación
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.classList.remove('modal-open'); // Restaura scroll
+            }, 300);
+        }
+
+        // Cierra el modal si se hace clic fuera de la ventana central
+        document.getElementById('project-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+    </script>
 </body>
 </html>
