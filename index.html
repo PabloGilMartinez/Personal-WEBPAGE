@@ -6,15 +6,15 @@
     <title>Pablo Gil Martínez | Data Scientist</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        // Configuración de la paleta de colores personalizada en Tailwind
+        // Configuración de la paleta 2: Lógica y Proactividad
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        principal: '#276E90',
-                        complementario: '#CECFC9',
-                        oscuro: '#0A3143',
-                        claro: '#EFEFEF',
+                        fondo: '#FFFFFF',      // Blanco
+                        texto: '#1E1E24',      // Negro pizarra
+                        secundario: '#8D99AE', // Gris técnico
+                        acento: '#D90429',     // Rojo carmesí
                     }
                 }
             }
@@ -23,128 +23,128 @@
     <style>
         /* Personalización de la barra de desplazamiento con los nuevos colores */
         ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0A3143; } /* oscuro */
-        ::-webkit-scrollbar-thumb { background: #276E90; border-radius: 4px; } /* principal */
-        ::-webkit-scrollbar-thumb:hover { background: #CECFC9; } /* complementario */
+        ::-webkit-scrollbar-track { background: #FFFFFF; } /* fondo */
+        ::-webkit-scrollbar-thumb { background: #D90429; border-radius: 4px; } /* acento */
+        ::-webkit-scrollbar-thumb:hover { background: #1E1E24; } /* texto */
         
         /* Previene el scroll del fondo cuando el modal está abierto */
         body.modal-open { overflow: hidden; }
     </style>
 </head>
-<body class="bg-oscuro text-claro font-sans antialiased selection:bg-principal selection:text-claro">
+<body class="bg-fondo text-texto font-sans antialiased selection:bg-acento selection:text-fondo">
 
-    <nav class="bg-oscuro/90 backdrop-blur-md border-b border-principal/20 fixed w-full z-40 top-0 left-0">
+    <nav class="bg-fondo/95 backdrop-blur-md border-b border-acento/20 fixed w-full z-40 top-0 left-0">
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <span class="font-mono font-bold text-xl tracking-tighter text-principal">PG_</span>
-            <div class="hidden md:flex space-x-8 text-sm font-medium text-complementario">
-                <a href="#inicio" class="hover:text-principal transition">Inicio</a>
-                <a href="#sobre-mi" class="hover:text-principal transition">Sobre mí</a>
-                <a href="#proyectos" class="hover:text-principal transition">Proyectos</a>
-                <a href="#experiencia" class="hover:text-principal transition">Experiencia</a>
-                <a href="#contacto" class="text-claro hover:text-principal transition border border-principal/40 px-4 py-1.5 rounded-md hover:border-principal">Contacto</a>
+            <span class="font-mono font-bold text-xl tracking-tighter text-acento">PG_</span>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-secundario">
+                <a href="#inicio" class="hover:text-acento transition">Inicio</a>
+                <a href="#sobre-mi" class="hover:text-acento transition">Sobre mí</a>
+                <a href="#proyectos" class="hover:text-acento transition">Proyectos</a>
+                <a href="#experiencia" class="hover:text-acento transition">Experiencia</a>
+                <a href="#contacto" class="text-texto hover:text-acento transition border border-acento/40 px-4 py-1.5 rounded-md hover:border-acento">Contacto</a>
             </div>
         </div>
     </nav>
 
     <div class="pt-[68px] min-h-screen">
 
-        <main class="w-full bg-oscuro">
+        <main class="w-full bg-fondo">
             
-            <header id="inicio" class="relative h-[60vh] flex flex-col justify-center items-center text-center border-b border-principal/20 bg-[url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center">
-                <div class="absolute inset-0 bg-oscuro/85 backdrop-blur-sm"></div>
+            <header id="inicio" class="relative h-[60vh] flex flex-col justify-center items-center text-center border-b border-acento/20 bg-[url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center">
+                <div class="absolute inset-0 bg-fondo/85 backdrop-blur-sm"></div>
                 <div class="relative z-10 px-4">
-                    <h1 class="text-5xl md:text-7xl font-extrabold text-claro mb-4 tracking-tight">Pablo Gil Martínez</h1>
-                    <h2 class="text-xl md:text-3xl text-principal font-mono">>&nbsp;Data Scientist<span class="animate-pulse">_</span></h2>
+                    <h1 class="text-5xl md:text-7xl font-extrabold text-texto mb-4 tracking-tight">Pablo Gil Martínez</h1>
+                    <h2 class="text-xl md:text-3xl text-acento font-mono">>&nbsp;Data Scientist<span class="animate-pulse">_</span></h2>
                 </div>
             </header>
 
             <div class="max-w-5xl mx-auto px-6 py-16 space-y-24">
                 
                 <section id="sobre-mi" class="scroll-mt-24">
-                    <h2 class="text-3xl font-bold text-claro mb-6 border-l-4 border-principal pl-4">Sobre mí</h2>
-                    <div class="bg-principal/5 p-8 rounded-2xl border border-principal/20">
-                        <p class="text-lg text-complementario leading-relaxed mb-4">
-                            Soy un estudiante de Ciencia de Datos en la UPV con un <span class="text-claro font-semibold">perfil proactivo</span> y un fuerte interés en las <span class="text-claro font-semibold">matemáticas aplicadas</span> y el Machine Learning. Me enfoco en transformar datos complejos en soluciones e insights accionables.
+                    <h2 class="text-3xl font-bold text-texto mb-6 border-l-4 border-acento pl-4">Sobre mí</h2>
+                    <div class="bg-acento/5 p-8 rounded-2xl border border-acento/20">
+                        <p class="text-lg text-texto/80 leading-relaxed mb-4">
+                            Soy un estudiante de Ciencia de Datos en la UPV con un <span class="text-texto font-bold">perfil proactivo</span> y un fuerte interés en las <span class="text-texto font-bold">matemáticas aplicadas</span> y el Machine Learning. Me enfoco en transformar datos complejos en soluciones e insights accionables.
                         </p>
-                        <p class="text-lg text-complementario leading-relaxed">
+                        <p class="text-lg text-texto/80 leading-relaxed">
                             Mi trasfondo combina el rigor analítico y el desarrollo de software con una fuerte disciplina personal. Siempre busco aprender nuevas metodologías participando activamente en proyectos de innovación y ecosistemas universitarios.
                         </p>
                     </div>
                 </section>
 
                 <section id="proyectos" class="scroll-mt-24">
-                    <h2 class="text-3xl font-bold text-claro mb-8 border-l-4 border-principal pl-4">Proyectos Destacados</h2>
+                    <h2 class="text-3xl font-bold text-texto mb-8 border-l-4 border-acento pl-4">Proyectos Destacados</h2>
                     
                     <div class="grid md:grid-cols-2 gap-6">
                         
                         <div onclick="openModal('Valenbisi Smart', 'Predictivo / Real-time', 'Junio 2026', '<p>Aplicación web predictiva diseñada para anticipar la disponibilidad de bicicletas urbanas en las estaciones de Valencia. El proyecto combina modelos de machine learning con la API de rutas de OSRM.</p><p>Se enfoca en mejorar la experiencia del usuario final, permitiendo planificar rutas con garantías de encontrar anclajes libres, a través de una interfaz interactiva desplegada en Streamlit.</p>', ['Python', 'Streamlit', 'Machine Learning', 'OSRM API'])" 
-                             class="bg-principal/5 rounded-xl overflow-hidden border border-principal/25 hover:border-principal transition duration-300 group cursor-pointer shadow-lg hover:shadow-principal/10 relative">
+                             class="bg-fondo rounded-xl overflow-hidden border border-acento/20 hover:border-acento transition duration-300 group cursor-pointer shadow-md hover:shadow-xl hover:shadow-acento/10 relative">
                             <div class="p-6">
-                                <span class="text-xs font-mono uppercase text-complementario mb-2 block">Predictivo / Real-time</span>
-                                <h3 class="text-xl font-bold text-claro mb-3 group-hover:text-principal transition">Valenbisi Smart</h3>
-                                <p class="text-complementario/80 text-sm mb-6 line-clamp-3">
+                                <span class="text-xs font-mono uppercase text-secundario mb-2 block">Predictivo / Real-time</span>
+                                <h3 class="text-xl font-bold text-texto mb-3 group-hover:text-acento transition">Valenbisi Smart</h3>
+                                <p class="text-secundario text-sm mb-6 line-clamp-3">
                                     Aplicación web interactiva que predice la disponibilidad de bicicletas urbanas en Valencia utilizando machine learning y la API de OSRM.
                                 </p>
                                 <div class="flex flex-wrap gap-2">
-                                    <span class="text-xs bg-oscuro border border-principal/20 px-2 py-1 rounded text-claro">Python</span>
-                                    <span class="text-xs bg-oscuro border border-principal/20 px-2 py-1 rounded text-claro">Streamlit</span>
+                                    <span class="text-xs bg-fondo border border-acento/20 px-2 py-1 rounded text-texto">Python</span>
+                                    <span class="text-xs bg-fondo border border-acento/20 px-2 py-1 rounded text-texto">Streamlit</span>
                                 </div>
                             </div>
-                            <div class="absolute bottom-4 right-6 opacity-0 group-hover:opacity-100 transition-opacity text-principal text-sm font-semibold flex items-center gap-1">
+                            <div class="absolute bottom-4 right-6 opacity-0 group-hover:opacity-100 transition-opacity text-acento text-sm font-semibold flex items-center gap-1">
                                 Ver más <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                             </div>
                         </div>
 
                         <div onclick="openModal('Math Vision', 'Computer Vision / LLMs', 'Febrero 2026 - Presente', '<p>Proyecto de investigación centrado en evaluar las capacidades de razonamiento lógico de los Large Language Models (LLMs) actuales.</p><p>A través de la resolución de problemas matemáticos visuales complejos, el system pone a prueba el comportamiento del modelo, creando pipelines técnicos para automatizar la extracción de fallos y alucinaciones lógicas en arquitecturas multimodales.</p>', ['PyTorch', 'Transformers', 'LLMs', 'Evaluación'])" 
-                             class="bg-principal/5 rounded-xl overflow-hidden border border-principal/25 hover:border-principal transition duration-300 group cursor-pointer shadow-lg hover:shadow-principal/10 relative">
+                             class="bg-fondo rounded-xl overflow-hidden border border-acento/20 hover:border-acento transition duration-300 group cursor-pointer shadow-md hover:shadow-xl hover:shadow-acento/10 relative">
                             <div class="p-6">
-                                <span class="text-xs font-mono uppercase text-complementario mb-2 block">Computer Vision / LLMs</span>
-                                <h3 class="text-xl font-bold text-claro mb-3 group-hover:text-principal transition">Math Vision</h3>
-                                <p class="text-complementario/80 text-sm mb-6 line-clamp-3">
+                                <span class="text-xs font-mono uppercase text-secundario mb-2 block">Computer Vision / LLMs</span>
+                                <h3 class="text-xl font-bold text-texto mb-3 group-hover:text-acento transition">Math Vision</h3>
+                                <p class="text-secundario text-sm mb-6 line-clamp-3">
                                     Proyecto de investigación evaluando el razonamiento lógico de los LLMs al enfrentarse a problemas matemáticos visuales complejos.
                                 </p>
                                 <div class="flex flex-wrap gap-2">
-                                    <span class="text-xs bg-oscuro border border-principal/20 px-2 py-1 rounded text-claro">PyTorch</span>
-                                    <span class="text-xs bg-oscuro border border-principal/20 px-2 py-1 rounded text-claro">Transformers</span>
+                                    <span class="text-xs bg-fondo border border-acento/20 px-2 py-1 rounded text-texto">PyTorch</span>
+                                    <span class="text-xs bg-fondo border border-acento/20 px-2 py-1 rounded text-texto">Transformers</span>
                                 </div>
                             </div>
-                            <div class="absolute bottom-4 right-6 opacity-0 group-hover:opacity-100 transition-opacity text-principal text-sm font-semibold flex items-center gap-1">
+                            <div class="absolute bottom-4 right-6 opacity-0 group-hover:opacity-100 transition-opacity text-acento text-sm font-semibold flex items-center gap-1">
                                 Ver más <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                             </div>
                         </div>
 
                         <div onclick="openModal('Beyond Neptune', 'Astroinformática / Análisis Espacial', 'Enero 2025 - Agosto 2025', '<p>Sistema de astroinformática especializado en la identificación y análisis de datos exoplanetarios.</p><p>Este proyecto se centra en el procesamiento de inmensos volúmenes de datos espaciales, aplicando algoritmos estadísticos y de limpieza de datos para detectar anomalías y patrones compatibles con la existencia de exoplanetas.</p>', ['Python', 'Análisis Espacial', 'Estadística', 'Astroinformática'])" 
-                             class="bg-principal/5 rounded-xl overflow-hidden border border-principal/25 hover:border-principal transition duration-300 group cursor-pointer shadow-lg hover:shadow-principal/10 relative">
+                             class="bg-fondo rounded-xl overflow-hidden border border-acento/20 hover:border-acento transition duration-300 group cursor-pointer shadow-md hover:shadow-xl hover:shadow-acento/10 relative">
                             <div class="p-6">
-                                <span class="text-xs font-mono uppercase text-complementario mb-2 block">Análisis Espacial</span>
-                                <h3 class="text-xl font-bold text-claro mb-3 group-hover:text-principal transition">Beyond Neptune</h3>
-                                <p class="text-complementario/80 text-sm mb-6 line-clamp-3">
+                                <span class="text-xs font-mono uppercase text-secundario mb-2 block">Análisis Espacial</span>
+                                <h3 class="text-xl font-bold text-texto mb-3 group-hover:text-acento transition">Beyond Neptune</h3>
+                                <p class="text-secundario text-sm mb-6 line-clamp-3">
                                     Proyecto de astroinformática enfocado en la identificación de exoplanetas mediante técnicas avanzadas de análisis de datos espaciales.
                                 </p>
                                 <div class="flex flex-wrap gap-2">
-                                    <span class="text-xs bg-oscuro border border-principal/20 px-2 py-1 rounded text-claro">Python</span>
-                                    <span class="text-xs bg-oscuro border border-principal/20 px-2 py-1 rounded text-claro">Data Analysis</span>
+                                    <span class="text-xs bg-fondo border border-acento/20 px-2 py-1 rounded text-texto">Python</span>
+                                    <span class="text-xs bg-fondo border border-acento/20 px-2 py-1 rounded text-texto">Data Analysis</span>
                                 </div>
                             </div>
-                            <div class="absolute bottom-4 right-6 opacity-0 group-hover:opacity-100 transition-opacity text-principal text-sm font-semibold flex items-center gap-1">
+                            <div class="absolute bottom-4 right-6 opacity-0 group-hover:opacity-100 transition-opacity text-acento text-sm font-semibold flex items-center gap-1">
                                 Ver más <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                             </div>
                         </div>
 
                         <div onclick="openModal('Happy Doggy', 'Affective Computing', 'Junio 2025 - Agosto 2025', '<p>Sistema multimodal de computación afectiva orientado al mundo animal, específicamente para el reconocimiento de emociones caninas.</p><p>Integra diversos flujos de datos (visuales y de comportamiento) para entrenar modelos que asisten a veterinarios y entrenadores en la evaluación del bienestar emocional de los perros.</p>', ['Affective Computing', 'Computer Vision', 'Deep Learning'])" 
-                             class="bg-principal/5 rounded-xl overflow-hidden border border-principal/25 hover:border-principal transition duration-300 group cursor-pointer shadow-lg hover:shadow-principal/10 relative">
+                             class="bg-fondo rounded-xl overflow-hidden border border-acento/20 hover:border-acento transition duration-300 group cursor-pointer shadow-md hover:shadow-xl hover:shadow-acento/10 relative">
                             <div class="p-6">
-                                <span class="text-xs font-mono uppercase text-complementario mb-2 block">Affective Computing</span>
-                                <h3 class="text-xl font-bold text-claro mb-3 group-hover:text-principal transition">Happy Doggy</h3>
-                                <p class="text-complementario/80 text-sm mb-6 line-clamp-3">
+                                <span class="text-xs font-mono uppercase text-secundario mb-2 block">Affective Computing</span>
+                                <h3 class="text-xl font-bold text-texto mb-3 group-hover:text-acento transition">Happy Doggy</h3>
+                                <p class="text-secundario text-sm mb-6 line-clamp-3">
                                     Sistema multimodal para el reconocimiento y clasificación de emociones caninas aplicando técnicas de computación afectiva.
                                 </p>
                                 <div class="flex flex-wrap gap-2">
-                                    <span class="text-xs bg-oscuro border border-principal/20 px-2 py-1 rounded text-claro">Deep Learning</span>
-                                    <span class="text-xs bg-oscuro border border-principal/20 px-2 py-1 rounded text-claro">Computer Vision</span>
+                                    <span class="text-xs bg-fondo border border-acento/20 px-2 py-1 rounded text-texto">Deep Learning</span>
+                                    <span class="text-xs bg-fondo border border-acento/20 px-2 py-1 rounded text-texto">Computer Vision</span>
                                 </div>
                             </div>
-                            <div class="absolute bottom-4 right-6 opacity-0 group-hover:opacity-100 transition-opacity text-principal text-sm font-semibold flex items-center gap-1">
+                            <div class="absolute bottom-4 right-6 opacity-0 group-hover:opacity-100 transition-opacity text-acento text-sm font-semibold flex items-center gap-1">
                                 Ver más <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                             </div>
                         </div>
@@ -153,34 +153,34 @@
                 </section>
 
                 <section id="experiencia" class="scroll-mt-24">
-                    <h2 class="text-3xl font-bold text-claro mb-8 border-l-4 border-principal pl-4">Experiencia & Logros</h2>
+                    <h2 class="text-3xl font-bold text-texto mb-8 border-l-4 border-acento pl-4">Experiencia & Logros</h2>
                     <div class="space-y-6">
                         
-                        <div class="flex flex-col md:flex-row gap-4 bg-principal/5 p-6 rounded-xl border border-principal/20">
+                        <div class="flex flex-col md:flex-row gap-4 bg-acento/5 p-6 rounded-xl border border-acento/10">
                             <div class="md:w-1/3">
-                                <p class="text-principal font-mono text-sm">Febrero 2026 - Presente</p>
-                                <h3 class="text-lg font-bold text-claro mt-1">Junta Directiva</h3>
-                                <p class="text-complementario text-sm">Sigma Data Club UPV</p>
+                                <p class="text-acento font-mono text-sm">Febrero 2026 - Presente</p>
+                                <h3 class="text-lg font-bold text-texto mt-1">Junta Directiva</h3>
+                                <p class="text-secundario text-sm">Sigma Data Club UPV</p>
                             </div>
-                            <div class="md:w-2/3 text-complementario text-sm">
+                            <div class="md:w-2/3 text-texto/80 text-sm">
                                 Participación activa en la dirección del club, dinamizando el ecosistema de innovación de la universidad y fomentando el desarrollo técnico en el área de ciencia de datos mediante talleres y retos grupales.
                             </div>
                         </div>
 
-                        <div class="flex flex-col md:flex-row gap-4 bg-principal/5 p-6 rounded-xl border border-principal/20">
+                        <div class="flex flex-col md:flex-row gap-4 bg-acento/5 p-6 rounded-xl border border-acento/10">
                             <div class="md:w-1/3">
-                                <p class="text-principal font-mono text-sm">Competiciones (2026)</p>
-                                <h3 class="text-lg font-bold text-claro mt-1">Hackathons</h3>
-                                <p class="text-complementario text-sm">Data Optimization</p>
+                                <p class="text-acento font-mono text-sm">Competiciones (2026)</p>
+                                <h3 class="text-lg font-bold text-texto mt-1">Hackathons</h3>
+                                <p class="text-secundario text-sm">Data Optimization</p>
                             </div>
-                            <div class="md:w-2/3 text-complementario text-sm space-y-3">
+                            <div class="md:w-2/3 text-texto/80 text-sm space-y-3">
                                 <div class="flex items-center gap-3">
                                     <span class="text-xl">🏆</span>
-                                    <p><strong class="text-claro">1er lugar</strong> – View Innovation Campus Hackathon.</p>
+                                    <p><strong class="text-texto">1er lugar</strong> – View Innovation Campus Hackathon.</p>
                                 </div>
                                 <div class="flex items-center gap-3">
                                     <span class="text-xl">🥈</span>
-                                    <p><strong class="text-claro">2do lugar</strong> – Mercadona Hackathon enfocado en optimización y flujos de datos logísticos.</p>
+                                    <p><strong class="text-texto">2do lugar</strong> – Mercadona Hackathon enfocado en optimización y flujos de datos logísticos.</p>
                                 </div>
                             </div>
                         </div>
@@ -189,19 +189,18 @@
                 </section>
 
                 <section id="contacto" class="scroll-mt-24 pb-12">
-                    <div class="bg-gradient-to-br from-oscuro to-principal/30 p-10 rounded-2xl border border-principal/30 text-center relative overflow-hidden">
-                        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-principal/10 blur-[100px] pointer-events-none"></div>
+                    <div class="bg-gradient-to-br from-fondo to-acento/10 p-10 rounded-2xl border border-acento/20 text-center relative overflow-hidden">
                         
                         <div class="relative z-10">
-                            <h2 class="text-3xl font-bold text-claro mb-4">¿Hablamos?</h2>
-                            <p class="text-complementario mb-8 max-w-lg mx-auto">
-                                Buscando activamente un <strong class="text-claro">Data Science Internship</strong> para septiembre de 2026. Estoy abierto a colaborar en proyectos de investigación o desarrollo de software en el ecosistema de IA.
+                            <h2 class="text-3xl font-bold text-texto mb-4">¿Hablamos?</h2>
+                            <p class="text-secundario mb-8 max-w-lg mx-auto">
+                                Buscando activamente un <strong class="text-texto">Data Science Internship</strong> para septiembre de 2026. Estoy abierto a colaborar en proyectos de investigación o desarrollo de software en el ecosistema de IA.
                             </p>
                             <div class="flex flex-col sm:flex-row justify-center gap-4">
-                                <a href="mailto:tu-correo@email.com" class="bg-principal hover:bg-principal/80 text-claro font-bold px-8 py-3 rounded-lg transition duration-200">
+                                <a href="mailto:tu-correo@email.com" class="bg-acento hover:bg-acento/90 text-fondo font-bold px-8 py-3 rounded-lg shadow-lg hover:shadow-acento/30 transition duration-200">
                                     Enviar Email
                                 </a>
-                                <a href="#" class="bg-oscuro hover:bg-principal/20 text-claro border border-principal/40 px-8 py-3 rounded-lg font-medium transition duration-200">
+                                <a href="#" class="bg-fondo hover:bg-secundario/10 text-texto border border-secundario/40 px-8 py-3 rounded-lg font-medium transition duration-200">
                                     LinkedIn
                                 </a>
                             </div>
@@ -211,37 +210,37 @@
 
             </div>
 
-            <footer class="py-8 text-center text-sm text-complementario/65 border-t border-principal/20 bg-oscuro">
+            <footer class="py-8 text-center text-sm text-secundario border-t border-acento/20 bg-fondo">
                 <p>&copy; 2026 Pablo Gil Martínez. Data Scientist Portfolio.</p>
             </footer>
 
         </main>
     </div>
 
-    <div id="project-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-oscuro/80 backdrop-blur-sm p-4 opacity-0 transition-opacity duration-300">
-        <div id="modal-content" class="bg-oscuro border border-principal/40 rounded-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto shadow-2xl transform scale-95 transition-transform duration-300 relative">
+    <div id="project-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-texto/40 backdrop-blur-sm p-4 opacity-0 transition-opacity duration-300">
+        <div id="modal-content" class="bg-fondo border border-acento/20 rounded-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto shadow-2xl transform scale-95 transition-transform duration-300 relative">
             
-            <button onclick="closeModal()" class="absolute top-4 right-4 text-complementario hover:text-claro bg-principal/10 hover:bg-principal/30 rounded-full p-2 transition z-10">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-secundario hover:text-acento bg-fondo hover:bg-acento/10 rounded-full p-2 transition z-10 border border-transparent hover:border-acento/20">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </button>
             
             <div class="p-8 md:p-12">
-                <span id="modal-type" class="text-sm font-mono uppercase text-principal mb-1 block"></span>
-                <span id="modal-date" class="text-xs text-complementario/70 font-mono mb-4 block"></span>
+                <span id="modal-type" class="text-sm font-mono uppercase text-acento mb-1 block"></span>
+                <span id="modal-date" class="text-xs text-secundario font-mono mb-4 block"></span>
                 
-                <h2 id="modal-title" class="text-3xl md:text-4xl font-bold text-claro mb-6"></h2>
+                <h2 id="modal-title" class="text-3xl md:text-4xl font-bold text-texto mb-6"></h2>
                 
-                <div id="modal-description" class="text-complementario text-lg leading-relaxed mb-8 space-y-4"></div>
+                <div id="modal-description" class="text-texto/80 text-lg leading-relaxed mb-8 space-y-4"></div>
                 
                 <div class="mb-8">
-                    <h4 class="text-sm text-complementario/60 uppercase tracking-widest mb-3">Stack Tecnológico</h4>
+                    <h4 class="text-sm text-secundario uppercase tracking-widest mb-3 font-semibold">Stack Tecnológico</h4>
                     <div id="modal-tags" class="flex flex-wrap gap-2"></div>
                 </div>
                 
-                <div class="flex gap-4 border-t border-principal/20 pt-8">
-                    <a href="#" class="bg-principal hover:bg-principal/80 text-claro font-bold px-6 py-3 rounded-lg transition duration-200">
+                <div class="flex gap-4 border-t border-acento/20 pt-8">
+                    <a href="#" class="bg-acento hover:bg-acento/90 text-fondo shadow-md hover:shadow-acento/30 font-bold px-6 py-3 rounded-lg transition duration-200">
                         Ver Repositorio
                     </a>
                 </div>
@@ -257,12 +256,12 @@
             document.getElementById('modal-date').innerText = date;
             document.getElementById('modal-description').innerHTML = descriptionHTML;
             
-            // Llenar etiquetas del modal dinámicamente con los nuevos colores
+            // Llenar etiquetas del modal dinámicamente con los nuevos colores de la Paleta 2
             const tagsContainer = document.getElementById('modal-tags');
             tagsContainer.innerHTML = '';
             tagsArray.forEach(tag => {
                 const span = document.createElement('span');
-                span.className = 'text-xs bg-oscuro border border-principal/30 px-3 py-1.5 rounded-md text-claro font-mono';
+                span.className = 'text-xs bg-fondo border border-acento/30 px-3 py-1.5 rounded-md text-texto font-mono font-medium';
                 span.innerText = tag;
                 tagsContainer.appendChild(span);
             });
